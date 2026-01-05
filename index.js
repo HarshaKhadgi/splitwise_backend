@@ -10,8 +10,12 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.get("/a", (req, res) => {
+app.get("/api", (req, res) => {
   res.status(200).send({ name: "Harsha" });
+});
+
+app.get("/api/hello", (req, res) => {
+  res.status(200).send({ name: "Hello" });
 });
 
 app.listen(port, () => {

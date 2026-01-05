@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: splitwise-backend-service
+  namespace: splitwise
+spec:
+  selector:
+    app: splitwise-backend
+  # ports:
+  #   - port: 80
+  #     targetPort: 80
+  #     nodePort: 30001
+  # type: NodePort
+  #ports:
+  #  - port: 80
+  #    targetPort: 80   # Your app container port
+  type: ClusterIP
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
